@@ -1,0 +1,29 @@
+
+<app-admin-nav></app-admin-nav>
+
+<app-admin-qod></app-admin-qod>
+
+<button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show(); publish();" mdbWavesEffect>Publish a new Q.o.D</button>
+
+<app-admin-table></app-admin-table>
+
+<!-- <button class="btn btn-primary" (click)="publish()">Publish A new qod</button> -->
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">Do You Want To Publish This Question ?</h4>
+      </div>
+      <div class="modal-body" >
+        Title of the question is: {{ disptitle }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide(); publishother(disptitle);" mdbWavesEffect>NO</button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="basicModal.hide(); publishit(disptitle);">YES</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  

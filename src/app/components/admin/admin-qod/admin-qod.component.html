@@ -1,0 +1,51 @@
+
+<div style="padding: 20px">
+    <mat-card>
+<div class="example-container" style="padding: 20px">
+    <mat-form-field>
+      <input matInput placeholder="Question Title" [(ngModel)]="title">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <textarea matInput placeholder="Question" [(ngModel)]="question" style="height: 100px;"></textarea>
+    </mat-form-field>
+  <div>
+    <mat-form-field >
+      <mat-select placeholder="Language" [(ngModel)]="language">
+        <mat-option value="C">C</mat-option>
+        <mat-option value="C++">C++</mat-option>
+        <mat-option value="Python">Python</mat-option>
+        <mat-option value="Java">Java</mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>  
+    <mat-form-field>
+          <textarea matInput placeholder="Solution" [(ngModel)]="solution" style="white-space: pre;height: 100px;"></textarea>
+        </mat-form-field> 
+        <div class="example-button-row" style="text-align: right">
+            <button mat-raised-button color="primary" data-toggle="modal" data-target="#basicExample" (click)="frame.show(); display(); resetForm();">Submit</button>
+        </div>
+  </div>
+  </mat-card>
+</div>
+<!-- <button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample" (click)="frame.show(); display();"
+  mdbWavesEffect>Launch Modal</button> -->
+
+<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-success" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="heading lead">Modal Success</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p>Question Added.</p>
+        </div>
+      </div>
+  </div>
+</div>

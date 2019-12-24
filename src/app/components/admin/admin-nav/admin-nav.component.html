@@ -1,0 +1,21 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark purple lighten-1" [containerInside]="false">
+    <mdb-navbar-brand><a class="navbar-brand" href="#">ᑕOᗪEᕼᑌᗷ</a></mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/admin">Home</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+          <li class="nav-item avatar dropdown" dropdown *ngIf="authService.userData as user">
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              <img width="30" src="https://png.pngtree.com/svg/20170418/287473299e.png" alt="" class="img-fluid rounded-circle z-depth-0"></a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">My Accounts</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect (click)="authService.SignOut(user)">Log out</a>
+            </div>
+          </li>
+      </ul>
+    </links>
+   
+  </mdb-navbar>
